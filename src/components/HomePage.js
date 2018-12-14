@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => (
+const HomePage = () => (
   <div className="homepage d-flex align-items-center">
     <div className="container text-white text-center">
       <h1>Website Title</h1>
@@ -8,3 +8,5 @@ export default () => (
     </div>
   </div>
 );
+
+export default HomePage;
