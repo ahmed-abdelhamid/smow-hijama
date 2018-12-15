@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
 import Slider from './Slider';
 import Location from './Location';
+import ContactForm from './ContactForm';
 
 export default class ContactUs extends Component {
   render() {
     return (
-      <div>
+      <div className="contact text-center">
         <Slider />
-        <div className="container">
-          <div className="row text-center">
-            <Location />
-            <div className="col-md-6">Address Details</div>
-          </div>
-        </div>
+        <Container className="py-5">
+          <h2 className="mb-4">Contact Us</h2>
+          <Row>
+            <Col md="6">
+              <div>
+                <Location />
+              </div>
+              <div>Address Details</div>
+            </Col>
+            <Col md="6">
+              <div>
+                <ContactForm />
+              </div>
+              <div>Social media Links is Here</div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
