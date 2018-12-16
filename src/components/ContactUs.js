@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Slider from './Slider';
 import Location from './Location';
 import ContactForm from './ContactForm';
+import SocialMediaLinks from './SocialMediaLinks';
 
 export default class ContactUs extends Component {
   render() {
@@ -23,7 +24,9 @@ export default class ContactUs extends Component {
               <div>
                 <ContactForm />
               </div>
-              <div>Social media Links is Here</div>
+              <div>
+                <SocialMediaLinks />
+              </div>
             </Col>
           </Row>
         </Container>
