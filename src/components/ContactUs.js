@@ -18,7 +18,7 @@ export default class ContactUs extends Component {
               <div>
                 <Location />
               </div>
-              <div>Address Details</div>
+              <div>Al Imam Saud Ibn Abdul Aziz Branch Road</div>
             </Col>
             <Col md="6">
               <div>
