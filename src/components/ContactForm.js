@@ -27,6 +27,18 @@ export default () => (
       />
     </FormGroup>
     <FormGroup>
+      <Label for="name" className="sr-only">
+        Name
+      </Label>
+      <Input
+        type="tel"
+        name="phone"
+        id="phone"
+        placeholder="Your Phone Number"
+        required
+      />
+    </FormGroup>
+    <FormGroup>
       <Label for="subject" className="sr-only">
         Subject
       </Label>
@@ -46,7 +58,7 @@ export default () => (
         type="textarea"
         name="message"
         id="message"
-        rows="5"
+        rows="3"
         placeholder="Type Your Message Here..."
         required
       />

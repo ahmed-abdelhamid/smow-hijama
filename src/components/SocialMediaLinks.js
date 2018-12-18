@@ -27,15 +27,16 @@ export default class SocialMediaLinks extends Component {
         <div className="d-flex justify-content-center align-items-center">
           <Row>
             <Col md="6">
-              Call us on:
+              Call us on
               <span className="d-inline-block px-2">
                 <FontAwesomeIcon icon={faPhone} size="1x" />
               </span>
+              :
             </Col>
             <Col md="6">
-              <div>+966555101483</div>
-              <div>+966555101486</div>
-              <div>+966545570507</div>
+              <div>+966&nbsp;555101483</div>
+              <div>+966&nbsp;555101486</div>
+              <div>+966&nbsp;545570507</div>
             </Col>
           </Row>
         </div>

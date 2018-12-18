@@ -15,17 +15,12 @@ export default class ContactUs extends Component {
           <h2 className="mb-4">Contact Us</h2>
           <Row>
             <Col md="6">
-              <div>
-                <Location />
-              </div>
-              <div>Al Imam Saud Ibn Abdul Aziz Branch Road</div>
+              <Location />
+              <SocialMediaLinks />
             </Col>
             <Col md="6">
               <div>
                 <ContactForm />
-              </div>
-              <div>
-                <SocialMediaLinks />
               </div>
             </Col>
           </Row>
