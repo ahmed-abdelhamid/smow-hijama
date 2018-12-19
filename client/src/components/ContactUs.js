@@ -3,10 +3,14 @@ import { Container, Row, Col } from 'reactstrap';
 
 import Slider from './Slider';
 import Location from './Location';
-import ContactForm from './ContactForm';
+import ContactForm from './FormComponents/ContactForm';
 import SocialMediaLinks from './SocialMediaLinks';
 
 export default class ContactUs extends Component {
+  submit = values => {
+    console.log(values);
+  };
+
   render() {
     return (
       <div className="contact text-center">
