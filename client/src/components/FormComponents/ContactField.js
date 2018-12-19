@@ -23,7 +23,9 @@ const ContactField = ({
       required
     />
     {touched &&
-      (error && <div className="text-danger text-left mt-1">{error}</div>)}
+      (error && (
+        <div className="text-danger text-left mt-1 small">{error}</div>
+      ))}
   </FormGroup>
 );
 
