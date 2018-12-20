@@ -1,10 +1,11 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Form, Button } from 'reactstrap';
+import { Form } from 'reactstrap';
 
 import ContactField from './ContactField';
+import SubmitButton from './SubmitButton';
 import { FIELDS } from '../../fixtures/fields';
-import { validate } from '../../utils/validateForm';
+import { validate, submitContactForm } from '../../utils/contactFormFunctions';
 
 const ContactForm = ({ handleSubmit }) => {
   const formFields = FIELDS.map(
@@ -23,20 +24,15 @@ const ContactForm = ({ handleSubmit }) => {
     )
   );
   return (
-    <Form
-      onSubmit={handleSubmit(values => {
-        console.log(values);
-      })}
-    >
+    <Form onSubmit={handleSubmit}>
       {formFields}
-      <div className="d-flex justify-content-center mb-3">
-        <Button className="button--submit">Submit</Button>
-      </div>
+      <SubmitButton />
     </Form>
   );
 };
 
 export default reduxForm({
   form: 'contactForm',
-  validate
+  validate,
+  onSubmit: submitContactForm
 })(ContactForm);
