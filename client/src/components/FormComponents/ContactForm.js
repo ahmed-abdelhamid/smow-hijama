@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import { Field, reduxForm, submit } from 'redux-form';
-import { Form } from 'reactstrap';
+import { Field, reduxForm } from 'redux-form';
+import { Form, Button } from 'reactstrap';
 
 import ContactField from './ContactField';
-import SubmitButton from './SubmitButton';
 import { FIELDS } from '../../fixtures/fields';
-import { validate, submitContactForm } from '../../utils/contactFormFunctions';
+import axios from 'axios';
+import { validate } from '../../utils/contactFormFunctions';
 
 class ContactForm extends Component {
   state = { response: '' };
 
-  handleClick = dispatch => {
-    const data = dispatch(submit('contactForm'));
+  submitContactForm = async values => {
+    const response = await axios.post('/api/sendmail', values);
+    const { data } = await response;
     this.setState({ response: data });
   };
 
@@ -33,9 +34,12 @@ class ContactForm extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit(this.submitContactForm)}>
         {this.renderFormFields()}
-        <SubmitButton handleClick={this.handleClick} />
+        <div className="d-flex justify-content-center mb-3">
+          <Button className="button--submit">Submit</Button>
+        </div>{' '}
+        {this.state.response && <p>{this.state.response}</p>}
       </Form>
     );
   }
@@ -43,6 +47,5 @@ class ContactForm extends Component {
 
 export default reduxForm({
   form: 'contactForm',
-  validate,
-  onSubmit: submitContactForm
+  validate
 })(ContactForm);

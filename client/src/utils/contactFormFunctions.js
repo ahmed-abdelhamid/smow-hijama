@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const validate = values => {
   const errors = {};
   if (!values.name) {
@@ -25,10 +23,4 @@ export const validate = values => {
     errors.message = 'Please Enter Your Message';
   }
   return errors;
-};
-
-export const submitContactForm = async values => {
-  const response = await axios.post('/api/sendmail', values);
-  const { data } = await response;
-  return data;
 };

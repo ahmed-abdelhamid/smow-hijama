@@ -6,6 +6,6 @@ module.exports = app => {
     console.log('Phone No.: ', phone);
     console.log('Mesaage Subject: ', subject);
     console.log('Message Content: ', message);
-    res.send(`This is a post request, This is what you sent me: ${req.body}`);
+    res.send(`Message Sent Successfully`);
   });
 };
