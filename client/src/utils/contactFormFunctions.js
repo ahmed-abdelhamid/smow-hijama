@@ -27,7 +27,8 @@ export const validate = values => {
   return errors;
 };
 
-export const submitContactForm = values => {
-  console.log(values);
-  // axios.post('/api/sendmail');
+export const submitContactForm = async values => {
+  const response = await axios.post('/api/sendmail', values);
+  const { data } = await response;
+  return data;
 };

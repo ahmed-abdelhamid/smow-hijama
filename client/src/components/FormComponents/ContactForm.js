@@ -1,5 +1,5 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import React, { Component } from 'react';
+import { Field, reduxForm, submit } from 'redux-form';
 import { Form } from 'reactstrap';
 
 import ContactField from './ContactField';
@@ -7,9 +7,16 @@ import SubmitButton from './SubmitButton';
 import { FIELDS } from '../../fixtures/fields';
 import { validate, submitContactForm } from '../../utils/contactFormFunctions';
 
-const ContactForm = ({ handleSubmit }) => {
-  const formFields = FIELDS.map(
-    ({ label, type, name, id, placeholder, rows = undefined }) => (
+class ContactForm extends Component {
+  state = { response: '' };
+
+  handleClick = dispatch => {
+    const data = dispatch(submit('contactForm'));
+    this.setState({ response: data });
+  };
+
+  renderFormFields = () =>
+    FIELDS.map(({ label, type, name, id, placeholder, rows = undefined }) => (
       <Field
         key={id}
         label={label}
@@ -21,15 +28,18 @@ const ContactForm = ({ handleSubmit }) => {
         rows={rows}
         required
       />
-    )
-  );
-  return (
-    <Form onSubmit={handleSubmit}>
-      {formFields}
-      <SubmitButton />
-    </Form>
-  );
-};
+    ));
+
+  render() {
+    const { handleSubmit } = this.props;
+    return (
+      <Form onSubmit={handleSubmit}>
+        {this.renderFormFields()}
+        <SubmitButton handleClick={this.handleClick} />
+      </Form>
+    );
+  }
+}
 
 export default reduxForm({
   form: 'contactForm',
