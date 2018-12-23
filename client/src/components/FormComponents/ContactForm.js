@@ -8,12 +8,15 @@ import axios from 'axios';
 import { validate } from '../../utils/contactFormFunctions';
 
 class ContactForm extends Component {
-  state = { response: '' };
+  state = { response: '', error: '' };
 
   submitContactForm = async values => {
-    const response = await axios.post('/api/sendmail', values);
-    const { data } = await response;
-    this.setState({ response: data });
+    const { data, status } = await axios.post('/api/sendmail', values);
+    if (status === 200) {
+      this.setState({ response: data });
+    } else if (status === 422) {
+      this.setState({ error: data });
+    }
   };
 
   renderFormFields = () =>
@@ -42,6 +45,7 @@ class ContactForm extends Component {
         {this.state.response && (
           <p className="text-success">{this.state.response}</p>
         )}
+        {this.state.error && <p className="text-danger">{this.state.error}</p>}
       </Form>
     );
   }
