@@ -1,24 +1,25 @@
 const sgMail = require('@sendgrid/mail');
 const keys = require('../config/keys');
+const emailTemplates = require('../emailTemplate/emailtemplate');
 
 sgMail.setApiKey(keys.sendGridKey);
 
 module.exports = app => {
   app.post('/api/sendmail', (req, res) => {
     const { name, email, phone, subject, message } = req.body;
-    console.log('Name: ', name);
-    console.log('Email Address: ', email);
-    console.log('Phone No.: ', phone);
-    console.log('Mesaage Subject: ', subject);
-    console.log('Message Content: ', message);
-  });
+    const text = `Message from ${name} with phone No. ${phone}: ${message}`;
+    const emailTemplate = { name, phone, message };
 
-  const msg = {
-    to: 'slevin.glevra@gmail.com',
-    from: 'test@example.com',
-    subject: 'Sending with SendGrid is Fun',
-    text: 'and easy to do anywhere, even with Node.js',
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>'
-  };
-  sgMail.send(msg);
+    const msg = {
+      to: 'slevin.glevra@gmail.com',
+      from: email,
+      subject: subject,
+      text,
+      html: emailTemplates(emailTemplate)
+    };
+    sgMail
+      .send(msg)
+      .then(() => res.send('Message Sent Successfully'))
+      .catch(err => res.status(422).send(err));
+  });
 };
