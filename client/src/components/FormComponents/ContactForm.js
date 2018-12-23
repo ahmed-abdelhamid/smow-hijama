@@ -15,7 +15,9 @@ class ContactForm extends Component {
     if (status === 200) {
       this.setState({ response: data });
     } else if (status === 422) {
-      this.setState({ error: data });
+      const error =
+        'Something went wrong, please try to submit your message again.';
+      this.setState({ error });
     }
   };
 
