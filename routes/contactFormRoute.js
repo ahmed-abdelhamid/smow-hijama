@@ -22,7 +22,7 @@ module.exports = app => {
       .then(() => res.send('Message Sent Successfully.'))
       .catch(err => {
         const { message, response } = err;
-        res.status(422).send(message);
+        res.send(message);
       });
   });
 };
