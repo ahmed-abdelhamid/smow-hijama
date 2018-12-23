@@ -1,7 +1,13 @@
 module.exports = ({ name, phone, message }) => {
   return `
-    <h1>A message from ${name}</h1>
-    <p>Phone No.: ${phone}</p>
-    <p>${message}</p>
+    <html>
+      <body>
+        <div style="text-align: center;">
+        <h1>Message From ${name}</h1>
+        <h3>Phone No.: ${phone}</h3>
+        <p>${message}</p>  
+        </div>
+      </body>
+    </html>
   `;
 };
