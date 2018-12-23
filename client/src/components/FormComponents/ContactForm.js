@@ -11,14 +11,16 @@ class ContactForm extends Component {
   state = { response: '', error: '' };
 
   submitContactForm = async values => {
-    const { data, status } = await axios.post('/api/sendmail', values);
-    if (status === 200) {
-      this.setState({ response: data });
-    } else if (status === 422) {
-      const error =
-        'Something went wrong, please try to submit your message again.';
-      this.setState({ error });
-    }
+    const response = await axios.post('/api/sendmail', values);
+    console.log(response);
+    // const { data, status } = await axios.post('/api/sendmail', values);
+    // if (status === 200) {
+    //   this.setState({ response: data });
+    // } else if (status === 422) {
+    //   const error =
+    //     'Something went wrong, please try to submit your message again.';
+    //   this.setState({ error });
+    // }
   };
 
   renderFormFields = () =>
