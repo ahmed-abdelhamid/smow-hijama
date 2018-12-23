@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withLocalize, Translate } from 'react-localize-redux';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Button, Container } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 import translations from '../utils/translations/homepage.json';
 
@@ -26,15 +26,13 @@ class HomePage extends Component {
         <div className="homepage d-flex align-items-center">
           <div className="container text-white text-center">
             <h1>
-              <Translate id="TITLE">مركز سمو الحياة للحجامة</Translate>
+              <Translate id="TITLE" />
             </h1>
             <p>
-              <Translate id="SUBTITLE">
-                مرحبا بكم فى مركز سمو الحياة للحجامة
-              </Translate>
+              <Translate id="SUBTITLE" />
             </p>
             <Button tag={Link} to="/contact" size="lg">
-              <Translate id="CONTACT_US_BUTTON">اتصل بنا</Translate>
+              <Translate id="CONTACT_US_BUTTON" />
             </Button>
           </div>
         </div>

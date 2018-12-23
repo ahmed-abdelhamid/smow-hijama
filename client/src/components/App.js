@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import HomePage from './HomePage';
 import ContactUs from './ContactUs';
+import Footer from './Footer';
 
 const App = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ const App = () => (
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/contact" component={ContactUs} />
       </Switch>
+      <Footer />
     </div>
   </BrowserRouter>
 );
