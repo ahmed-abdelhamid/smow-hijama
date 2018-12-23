@@ -20,9 +20,6 @@ module.exports = app => {
     sgMail
       .send(msg)
       .then(() => res.send('Message Sent Successfully.'))
-      .catch(err => {
-        const { message, response } = err;
-        res.send(message);
-      });
+      .catch(err => res.send(err));
   });
 };
