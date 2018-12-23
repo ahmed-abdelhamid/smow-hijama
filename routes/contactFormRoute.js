@@ -19,7 +19,13 @@ module.exports = app => {
     };
     sgMail
       .send(msg)
-      .then(() => res.send('Message Sent Successfully'))
-      .catch(err => res.status(422).send(err));
+      .then(() => res.send('Message Sent Successfully.'))
+      .catch(() =>
+        res
+          .status(422)
+          .send(
+            'Message not sent. Something went wrong, please try to submit again.'
+          )
+      );
   });
 };
