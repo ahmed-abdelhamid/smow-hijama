@@ -39,7 +39,9 @@ class ContactForm extends Component {
         <div className="d-flex justify-content-center mb-3">
           <Button className="button--submit">Submit</Button>
         </div>{' '}
-        {this.state.response && <p>{this.state.response}</p>}
+        {this.state.response && (
+          <p className="text-success">{this.state.response}</p>
+        )}
       </Form>
     );
   }
