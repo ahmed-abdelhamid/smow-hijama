@@ -20,7 +20,7 @@ export default class SocialMediaLinks extends Component {
     return (
       <div>
         <div>
-          Contact us on:
+          Follow us on:
           {icons}
         </div>
         <div>Or</div>
