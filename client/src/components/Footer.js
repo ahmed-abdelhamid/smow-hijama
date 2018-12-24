@@ -1,17 +1,24 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright } from '@fortawesome/free-solid-svg-icons';
+import React, { Component } from 'react';
+import { withLocalize, Translate } from 'react-localize-redux';
 
 import LangButtons from './LangButtons';
+import translations from '../utils/translations/footer.json';
 
-export default () => (
-  <footer className="footer d-flex justify-content-around">
-    <div className="text-center">
-      <div className="footer__icon">
-        <FontAwesomeIcon icon={faCopyright} size="sm" />
-      </div>
-      2018 Copyright: <a href="/">www.example.com</a>
-    </div>
-    <LangButtons />
-  </footer>
-);
+class Footer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.props.addTranslation(translations);
+  }
+
+  render() {
+    return (
+      <footer className=" footer text-center py-2">
+        <Translate id="COPYRIGHTS" />
+        <LangButtons />
+      </footer>
+    );
+  }
+}
+
+export default withLocalize(Footer);

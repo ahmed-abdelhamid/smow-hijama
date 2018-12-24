@@ -1,0 +1,14 @@
+.lang-buttons {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+}
+
+.lang-button {
+  color: $red;
+}
+
+.lang-button:hover {
+  text-decoration: none;
+  color: lighten($red, 30%);
+}

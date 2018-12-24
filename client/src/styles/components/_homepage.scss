@@ -1,6 +1,8 @@
 .homepage {
   height: 100vh;
-  background-color: $dark-grey;
+  background-image: url('/assets/images/home.jpg');
+  background-size: cover;
   vertical-align: middle;
   font-size: $xl-font;
+  text-shadow: 3px 3px 2px rgb(46, 43, 43);
 }

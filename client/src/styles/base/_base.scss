@@ -1,8 +1,8 @@
-body {
-  color: $dark-grey;
-  background: $grey;
+.button {
+  background: $red;
+  border-radius: 30px;
 }
 
-.button--submit {
-  background: $dark-grey;
+.button:hover {
+  background: darken($red, 10%);
 }

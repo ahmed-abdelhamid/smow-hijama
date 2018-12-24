@@ -22,19 +22,17 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div>
-        <div className="homepage d-flex align-items-center">
-          <div className="container text-white text-center">
-            <h1>
-              <Translate id="TITLE" />
-            </h1>
-            <p>
-              <Translate id="SUBTITLE" />
-            </p>
-            <Button tag={Link} to="/contact" size="lg">
-              <Translate id="CONTACT_US_BUTTON" />
-            </Button>
-          </div>
+      <div className="homepage d-flex align-items-center">
+        <div className="container text-white text-center">
+          <h1>
+            <Translate id="TITLE" />
+          </h1>
+          <p>
+            <Translate id="SUBTITLE" />
+          </p>
+          <Button className="button" tag={Link} to="/contact" size="lg">
+            <Translate id="CONTACT_US_BUTTON" />
+          </Button>
         </div>
       </div>
     );
