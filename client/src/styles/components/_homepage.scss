@@ -3,6 +3,9 @@
   background-image: url('/assets/images/home.jpg');
   background-size: cover;
   vertical-align: middle;
-  font-size: $xl-font;
+  font-size: $m-font;
   text-shadow: 3px 3px 2px rgb(46, 43, 43);
+  @media (min-width: 1000px) {
+    font-size: $xl-font;
+  }
 }

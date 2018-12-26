@@ -36,7 +36,7 @@ export default class SocialMediaLinks extends Component {
             <Col md="6">
               <div>+966&nbsp;555101483</div>
               <div>+966&nbsp;555101486</div>
-              <div>+966&nbsp;545570507</div>
+              <div>+966&nbsp;532501555</div>
             </Col>
           </Row>
         </div>
