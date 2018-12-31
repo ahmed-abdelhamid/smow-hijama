@@ -32,10 +32,10 @@ class ContactUs extends Component {
             <Translate id="TITLE" />
           </h2>
           <Row>
-            <Col md="6">
+            <Col xs={{ size: 12, order: 2 }} md={{ size: 6, order: 1 }}>
               <Location />
             </Col>
-            <Col md="6">
+            <Col xs={{ size: 12, order: 1 }} md={{ size: 6, order: 2 }}>
               <div>
                 <ContactForm />
               </div>

@@ -39,7 +39,7 @@ class SocialMediaLinks extends Component {
     ));
 
     const socialSections = SECTIONS.map(({ id, icon, title, content }) => (
-      <Col key={id} className="d-flex align-items-start">
+      <Col md="6" key={id} className="d-flex align-items-start pb-3">
         <FontAwesomeIcon
           className="d-inline-block mr-3"
           icon={icon}
@@ -54,11 +54,9 @@ class SocialMediaLinks extends Component {
     ));
 
     return (
-      <div className="grey py-3">
-        <Row className="d-flex justify-content-around py-2">
-          {socialSections}
-        </Row>
-        <div>
+      <div className="grey">
+        <Row className="d-flex justify-content-around">{socialSections}</Row>
+        <div className="pb-5">
           <Translate id="FOLLOW_US" />
           {icons}
         </div>
