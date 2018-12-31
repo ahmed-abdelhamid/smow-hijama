@@ -1,3 +1,10 @@
-.carousel-item img {
+.carousel-item {
   max-height: 500px;
+  margin-bottom: $m-size;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 500px;
+  min-height: 300px;
 }
