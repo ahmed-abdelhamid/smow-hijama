@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Form, Button } from 'reactstrap';
+import { withLocalize, Translate } from 'react-localize-redux';
+import axios from 'axios';
 
 import ContactField from './ContactField';
 import { FIELDS } from '../../fixtures/fields';
-import axios from 'axios';
 import { validate } from '../../utils/contactFormFunctions';
+import translations from '../../utils/translations/contact-us.json';
 
 class ContactForm extends Component {
-  state = { response: '', error: '' };
+  constructor(props) {
+    super(props);
+
+    this.state = { response: '', error: '' };
+    this.props.addTranslation(translations);
+  }
 
   submitContactForm = async values => {
     try {
@@ -42,7 +49,9 @@ class ContactForm extends Component {
       <Form onSubmit={handleSubmit(this.submitContactForm)}>
         {this.renderFormFields()}
         <div className="d-flex justify-content-center mb-3">
-          <Button className="button--submit">Submit</Button>
+          <Button className="button">
+            <Translate id="SUBMIT_BUTTON" />
+          </Button>
         </div>{' '}
         {this.state.response && (
           <p className="text-success">{this.state.response}</p>
@@ -53,7 +62,9 @@ class ContactForm extends Component {
   }
 }
 
+const localizedForm = withLocalize(ContactForm);
+
 export default reduxForm({
   form: 'contactForm',
   validate
-})(ContactForm);
+})(localizedForm);
