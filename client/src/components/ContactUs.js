@@ -18,7 +18,7 @@ class ContactUs extends Component {
         { name: 'العربية', code: 'ar' },
         { name: 'English', code: 'en' }
       ],
-      options: { renderToStaticMarkup }
+      options: { renderToStaticMarkup, renderInnerHtml: true }
     });
     this.props.addTranslation(translations);
   }
@@ -34,7 +34,6 @@ class ContactUs extends Component {
           <Row>
             <Col md="6">
               <Location />
-              <SocialMediaLinks />
             </Col>
             <Col md="6">
               <div>
@@ -42,6 +41,7 @@ class ContactUs extends Component {
               </div>
             </Col>
           </Row>
+          <SocialMediaLinks />
         </Container>
       </div>
     );

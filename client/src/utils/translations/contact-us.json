@@ -1,4 +1,22 @@
 {
   "TITLE": ["اتصل بنا", "Contact Us"],
-  "SUBMIT_BUTTON": ["ارسال", "Submit"]
+  "SUBMIT_BUTTON": ["ارسال", "Submit"],
+  "FOLLOW_US": ["تابعنا على: ", "Follow Us On: "],
+  "VISIT_US": ["قم بزيارتنا:", "Visit Us:"],
+  "VISIT_US_DETAIL": [
+    "الرياض، حى الازدهار،<br />الامام سعود ابن عبد العزيز، امام النخيل مول",
+    "Riyadh, Al Izdihar District,<br />Al Imam Saud Ibn Abdul Aziz Branch Rd,<br />In Front Of Al Nakheel Mall"
+  ],
+  "EMAIL_US": ["راسلنا:", "Email Us:"],
+  "EMAIL_ADDRESS": ["Example@gmail.com", "Example@gmail.com"],
+  "CALL_US": ["اتصل بنا:", "Call Us:"],
+  "PHONE_NO": [
+    "+966&nbsp;555101483<br />+966&nbsp;555101486<br />+966&nbsp;532501555",
+    "+966&nbsp;555101483<br />+966&nbsp;555101486<br />+966&nbsp;532501555"
+  ],
+  "WORK_HOURS_TITLE": ["ساعات العمل:", "Work Hours:"],
+  "WORK_HOURS": [
+    "السبت-الخميس 8:00ص 11:00م<br />الجمعه 4:00م 11:م",
+    "Sat-Thu 8:00am-11:00pm<br />Fri 4:00pm-11:00pm"
+  ]
 }
