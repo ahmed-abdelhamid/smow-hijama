@@ -1,5 +1,5 @@
 import React from 'react';
-import { UncontrolledCarousel, Container } from 'reactstrap';
+import { UncontrolledCarousel } from 'reactstrap';
 
 const items = [
   {
@@ -7,7 +7,7 @@ const items = [
     altText: 'Smow Al Hayat'
   },
   {
-    src: '/assets/images/2.jpg',
+    src: '/assets/images/6.jpg',
     altText: 'Smow Al Hayat'
   },
   {
@@ -25,14 +25,13 @@ const items = [
 ];
 
 const Slider = () => (
-  <Container>
-    <UncontrolledCarousel
-      items={items}
-      indicators={false}
-      controls={false}
-      pause={false}
-    />
-  </Container>
+  <UncontrolledCarousel
+    className="pb-3"
+    items={items}
+    indicators={false}
+    controls={false}
+    pause={false}
+  />
 );
 
 export default Slider;
