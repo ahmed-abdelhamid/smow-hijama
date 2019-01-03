@@ -59,7 +59,7 @@ class SocialMediaLinks extends Component {
 
     return (
       <div className="grey">
-        <Row className="d-flex justify-content-around">{socialSections}</Row>
+        <Row>{socialSections}</Row>
         <div className="pb-5">
           <Translate id="FOLLOW_US" />
           {icons}
