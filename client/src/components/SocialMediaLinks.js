@@ -39,7 +39,11 @@ class SocialMediaLinks extends Component {
     ));
 
     const socialSections = SECTIONS.map(({ id, icon, title, content }) => (
-      <Col md="6" key={id} className="d-flex align-items-start pb-3">
+      <Col
+        md="6"
+        key={id}
+        className="d-flex align-items-start pb-3 bg-transparent"
+      >
         <FontAwesomeIcon
           className="d-inline-block mr-3"
           icon={icon}
