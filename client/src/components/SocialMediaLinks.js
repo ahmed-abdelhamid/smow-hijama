@@ -45,7 +45,7 @@ class SocialMediaLinks extends Component {
         className="d-flex align-items-start pb-3 bg-transparent"
       >
         <FontAwesomeIcon
-          className="d-inline-block mr-3"
+          className="d-inline-block mx-3"
           icon={icon}
           size="3x"
         />

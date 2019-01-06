@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { withLocalize, Translate } from 'react-localize-redux';
-import { renderToStaticMarkup } from 'react-dom/server';
 
 import Slider from './Slider';
 import Location from './Location';
@@ -13,13 +12,6 @@ class ContactUs extends Component {
   constructor(props) {
     super(props);
 
-    this.props.initialize({
-      languages: [
-        { name: 'العربية', code: 'ar' },
-        { name: 'English', code: 'en' }
-      ],
-      options: { renderToStaticMarkup, renderInnerHtml: true }
-    });
     this.props.addTranslation(translations);
   }
 

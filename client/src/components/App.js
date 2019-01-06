@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { withLocalize } from 'react-localize-redux';
+import { renderToStaticMarkup } from 'react-dom/server';
 
 import HomePage from './HomePage';
 import ContactUs from './ContactUs';
 import Footer from './Footer';
 
-const App = () => (
-  <BrowserRouter>
-    <div>
-      <Switch>
-        <Route path="/" component={HomePage} exact={true} />
-        <Route path="/contact" component={ContactUs} />
-      </Switch>
-      <Footer />
-    </div>
-  </BrowserRouter>
-);
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-export default App;
+    this.props.initialize({
+      languages: [
+        { name: 'العربية', code: 'ar' },
+        { name: 'English', code: 'en' }
+      ],
+      options: { renderToStaticMarkup, renderInnerHtml: true }
+    });
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route path="/" component={HomePage} exact={true} />
+            <Route path="/contact" component={ContactUs} />
+          </Switch>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
+
+export default withLocalize(App);
