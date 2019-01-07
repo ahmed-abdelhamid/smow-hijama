@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { withLocalize } from 'react-localize-redux';
 import { renderToStaticMarkup } from 'react-dom/server';
 
@@ -21,9 +22,11 @@ class App extends Component {
   }
 
   render() {
+    const { activeLanguage } = this.props;
+    const dir = activeLanguage === 'arabic' ? 'rtl' : 'ltr';
     return (
       <BrowserRouter>
-        <div>
+        <div dir={dir}>
           <Switch>
             <Route path="/" component={HomePage} exact={true} />
             <Route path="/contact" component={ContactUs} />
@@ -35,4 +38,8 @@ class App extends Component {
   }
 }
 
-export default withLocalize(App);
+const mapStateToProps = ({ activeLanguage }) => ({
+  activeLanguage
+});
+
+export default connect(mapStateToProps)(withLocalize(App));
