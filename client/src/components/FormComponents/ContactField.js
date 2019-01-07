@@ -17,6 +17,7 @@ const ContactField = ({
     <Input
       {...input}
       type={type}
+      dir="auto"
       id={id}
       placeholder={placeholder}
       rows={rows}
