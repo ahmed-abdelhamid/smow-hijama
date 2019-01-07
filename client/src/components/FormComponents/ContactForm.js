@@ -7,24 +7,22 @@ import axios from 'axios';
 import ContactField from './ContactField';
 import { FIELDS } from '../../fixtures/fields';
 import { validate } from '../../utils/contactFormFunctions';
-import translations from '../../utils/translations/contact-us.json';
+import translations from '../../utils/translations/contact-form.json';
 
 class ContactForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { response: '', error: '' };
+    this.state = { response: false, error: false };
     this.props.addTranslation(translations);
   }
 
   submitContactForm = async values => {
     try {
-      const { data } = await axios.post('/api/sendmail', values);
-      this.setState({ response: data });
+      await axios.post('/api/sendmail', values);
+      this.setState({ response: true });
     } catch (err) {
-      const error =
-        'Message not sent, Something went wrong. Please try to submit again later.';
-      this.setState({ error });
+      this.setState({ error: true });
     }
   };
 
@@ -54,9 +52,15 @@ class ContactForm extends Component {
           </Button>
         </div>{' '}
         {this.state.response && (
-          <p className="text-success">{this.state.response}</p>
+          <p className="text-success">
+            <Translate id="MESSAGE_SENT" />
+          </p>
         )}
-        {this.state.error && <p className="text-danger">{this.state.error}</p>}
+        {this.state.error && (
+          <p className="text-danger">
+            <Translate id="MESSAGE_NOT_SENT" />
+          </p>
+        )}
       </Form>
     );
   }

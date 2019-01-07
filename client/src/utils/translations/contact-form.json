@@ -1,0 +1,10 @@
+{
+  "MESSAGE_NOT_SENT": [
+    "لقد تعذر إيصال رسالتك ، يرجى إعادة المحاولة لاحقا.",
+    "Message not sent, Something went wrong. Please try to submit again later."
+  ],
+  "MESSAGE_SENT": [
+    "لقد تم استلام رسالتك بنجاح.",
+    "Your Message Sent Successfully."
+  ]
+}
