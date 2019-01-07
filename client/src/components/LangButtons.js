@@ -5,22 +5,31 @@ import { withLocalize } from 'react-localize-redux';
 
 import { activateLanguage } from '../actions/languageActions';
 
-const LangButtons = ({ languages, setActiveLanguage, activateLanguage }) => {
+const LangButtons = ({
+  languages,
+  setActiveLanguage,
+  activateLanguage,
+  activeLanguage
+}) => {
   return (
     <div className="lang-buttons">
-      {languages.map(lang => (
-        <Button
-          className="lang-button"
-          key={lang.code}
-          color="link"
-          onClick={() => {
-            setActiveLanguage(lang.code);
-            activateLanguage(lang.code);
-          }}
-        >
-          {lang.name}
-        </Button>
-      ))}
+      {languages.map(lang => {
+        const language = lang.name === 'English' ? 'english' : 'arabic';
+        const display = language === activeLanguage ? 'd-none' : 'd-block';
+        return (
+          <Button
+            className={`lang-button ${display}`}
+            key={lang.code}
+            color="link"
+            onClick={() => {
+              setActiveLanguage(lang.code); // For Translations Only
+              activateLanguage(lang.code); // For Layout
+            }}
+          >
+            {lang.name}
+          </Button>
+        );
+      })}
     </div>
   );
 };
