@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withLocalize } from 'react-localize-redux';
 import { renderToStaticMarkup } from 'react-dom/server';
 
+import LangButtons from './LangButtons';
 import HomePage from './HomePage';
 import ContactUs from './ContactUs';
 import Footer from './Footer';
@@ -27,6 +28,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div dir={dir}>
+          <LangButtons />
           <Switch>
             <Route path="/" component={HomePage} exact={true} />
             <Route path="/contact" component={ContactUs} />

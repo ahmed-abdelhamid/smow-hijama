@@ -1,15 +1,15 @@
 .lang-buttons {
   position: absolute;
+  z-index: 1;
   right: 0;
-  bottom: 50px;
 }
 
 .lang-button {
-  color: $red;
+  color: $dark-grey;
   text-decoration: none;
 }
 
 .lang-button:hover {
   text-decoration: none;
-  color: lighten($red, 30%);
+  color: darken($dark-grey, 30%);
 }

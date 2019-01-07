@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withLocalize, Translate } from 'react-localize-redux';
 
-import LangButtons from './LangButtons';
 import translations from '../utils/translations/footer.json';
 
 class Footer extends Component {
@@ -15,7 +14,6 @@ class Footer extends Component {
     return (
       <footer className=" footer text-center py-2">
         <Translate id="COPYRIGHTS" />
-        <LangButtons />
       </footer>
     );
   }
