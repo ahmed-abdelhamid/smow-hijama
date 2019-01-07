@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -32,6 +33,9 @@ class SocialMediaLinks extends Component {
   }
 
   render() {
+    const { activeLanguage } = this.props;
+    const textAlign = activeLanguage === 'arabic' ? 'text-right' : 'text-left';
+
     const icons = LINKS.map(({ href, icon }) => (
       <a key={href} href={href} className="d-inline-block px-2 social-link">
         <FontAwesomeIcon icon={icon} size="1x" />
@@ -49,7 +53,7 @@ class SocialMediaLinks extends Component {
           icon={icon}
           size="3x"
         />
-        <span className="d-inline-block text-left">
+        <span className={`d-inline-block ${textAlign}`}>
           <Translate id={title} />
           <br />
           <Translate id={content} />
@@ -69,4 +73,6 @@ class SocialMediaLinks extends Component {
   }
 }
 
-export default withLocalize(SocialMediaLinks);
+const mapStateToProps = ({ activeLanguage }) => ({ activeLanguage });
+
+export default connect(mapStateToProps)(withLocalize(SocialMediaLinks));
