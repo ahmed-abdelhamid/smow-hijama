@@ -25,9 +25,10 @@ class App extends Component {
   render() {
     const { activeLanguage } = this.props;
     const dir = activeLanguage === 'arabic' ? 'rtl' : 'ltr';
+    const font = activeLanguage === 'arabic' ? 'arabic-font' : '';
     return (
       <BrowserRouter>
-        <div dir={dir}>
+        <div dir={dir} className={font}>
           <LangButtons />
           <Switch>
             <Route path="/" component={HomePage} exact={true} />
