@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Carousel, CarouselItem } from 'reactstrap';
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
 
 const items = [
   {
-    src: '/assets/images/1.jpg',
+    src: '/assets/images/sm.jpg',
     altText: 'Smow Al Hayat'
   },
   {
-    src: '/assets/images/6.jpg',
+    src: '/assets/images/123.jpg',
     altText: 'Smow Al Hayat'
   },
   {
@@ -24,63 +24,16 @@ const items = [
   }
 ];
 
-class Slider extends Component {
-  state = { activeIndex: 0 };
-
-  onExiting = () => {
-    this.animating = true;
-  };
-
-  onExited = () => {
-    this.animating = false;
-  };
-
-  next = () => {
-    if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === items.length - 1
-        ? 0
-        : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
-  };
-
-  previous = () => {
-    if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === 0
-        ? items.length - 1
-        : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
-  };
-
-  goToIndex = newIndex => {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
-  };
-
-  render() {
-    const { activeIndex } = this.state;
-
-    const slides = items.map(item => (
-      <CarouselItem
-        onExiting={this.onExiting}
-        onExited={this.onExited}
-        key={item.src}
-      >
-        <img src={item.src} alt={item.altText} />
-      </CarouselItem>
-    ));
-
-    return (
-      <Carousel
-        activeIndex={activeIndex}
-        next={this.next}
-        previous={this.previous}
-      >
-        {slides}
-      </Carousel>
-    );
-  }
-}
+const Slider = () => (
+  <div>
+    <Carousel showStatus={false} infiniteLoop autoPlay>
+      {items.map(({ src, altText }) => (
+        <div key={src}>
+          <img src={src} alt={altText} />
+        </div>
+      ))}
+    </Carousel>
+  </div>
+);
 
 export default Slider;

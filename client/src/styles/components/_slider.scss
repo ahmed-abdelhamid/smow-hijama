@@ -1,10 +1,7 @@
-.carousel-item {
-  max-height: 500px;
-  margin-bottom: $m-size;
+.carousel {
+  direction: ltr;
 }
 
-.carousel-item img {
-  width: 100%;
+.carousel .slide img {
   max-height: 500px;
-  min-height: 300px;
 }

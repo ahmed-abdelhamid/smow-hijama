@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import App from './components/App';
 import reducers from './reducers';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './styles/index.scss';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
